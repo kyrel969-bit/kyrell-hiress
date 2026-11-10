@@ -1,0 +1,33 @@
+{
+  "id": "kyrell.hiress",
+  "name": "Kyrell Hiress",
+  "version": "1.0.0",
+  "resources": [
+    "search",
+    "stream"
+  ],
+  "allowDownloads": 0,
+  "checkValidLossless": 1,
+  "settings": [
+    {
+      "key": "quality",
+      "type": "select",
+      "label": "Audio Quality",
+      "default": "lossless",
+      "options": [
+        {
+          "value": "hires",
+          "label": "Hi-Res"
+        },
+        {
+          "value": "lossless",
+          "label": "Lossless"
+        },
+        {
+          "value": "high",
+          "label": "High (320 kbps)"
+        }
+      ]
+    }
+  ]
+}
