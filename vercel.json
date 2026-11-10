@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/search",
+      "destination": "/api/search"
+    },
+    {
+      "source": "/stream/:id",
+      "destination": "/api/stream/:id"
+    }
+  ]
+}
