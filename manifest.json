@@ -2,6 +2,7 @@
   "id": "kyrell.hiress",
   "name": "Kyrell Hiress",
   "version": "1.0.0",
+"bitchordAuth": true,
   "resources": [
     "search",
     "stream"
