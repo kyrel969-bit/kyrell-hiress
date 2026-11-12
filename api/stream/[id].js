@@ -1,10 +1,25 @@
+import { createBitChordAuth } from "../../bitchord-addon-auth.mjs";
 
+const auth = createBitChordAuth({
+  hosts: ["kyrell-hiress.vercel.app"]
+});
 export default async function handler(req, res) {
   if (req.method !== "GET") {
     return res.status(405).json({
       error: "Method not allowed"
     });
   }
+  const authResult = await auth.verifyRequest(req);
+
+if (!authResult.ok) {
+  const rejected = auth.rejection(authResult);
+
+  for (const [name, value] of Object.entries(rejected.headers)) {
+    res.setHeader(name, value);
+  }
+
+  return res.status(rejected.status).send(rejected.body);
+}
 
   const trackId = req.query.id;
 
